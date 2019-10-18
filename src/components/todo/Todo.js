@@ -16,8 +16,7 @@ class Todo extends Component {
     };
 
     addTask() {
-        const task = this.state.task;
-        const data = this.state.data;
+        const { task, data} = this.state;
         const tempData = data.splice();
         tempData.push(task);
         this.setState({data: tempData})

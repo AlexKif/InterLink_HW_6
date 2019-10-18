@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86a5a32e-ce3a-414b-a036-b26f1d0e7fe5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/todo/Todo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/todo/style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -67,7 +70,7 @@
       <updated>1571386609264</updated>
       <workItem from="1571386610578" duration="3288000" />
       <workItem from="1571390448851" duration="43000" />
-      <workItem from="1571390509051" duration="9546000" />
+      <workItem from="1571390509051" duration="9806000" />
     </task>
     <servers />
   </component>
