@@ -1,0 +1,23 @@
+.enter-task {
+  max-width: 453px;
+  &-btn {
+    margin-left: 10px;
+  }
+}
+
+.todo-app {
+  max-width: 550px;
+  margin: 20px auto 0;
+  .ant-list-item {
+    display: flex;
+    justify-content: space-between;
+  }
+  .ant-list {
+    margin-top: 20px;
+  }
+}
+
+.actions-edit {
+  margin-right: 10px;
+}
+
