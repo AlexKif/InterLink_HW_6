@@ -1,19 +1,21 @@
-.enter-task {
-  max-width: 453px;
-  &-btn {
-    margin-left: 10px;
-  }
+.content {
+  display: flex;
+  max-width: 900px;
+  width: 100%;
+  justify-content: space-between;
+  margin: 100px auto 0;
+  border: 1px solid #EBEBEB;
+  padding: 20px;
 }
 
-.todo-app {
+.tasks {
   max-width: 550px;
-  margin: 20px auto 0;
-  .ant-list-item {
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  &__enter {
+    max-width: 453px;
   }
-  .ant-list {
-    margin-top: 20px;
+  &__send {
+    margin-left: 10px;
   }
 }
 
@@ -21,3 +23,42 @@
   margin-right: 10px;
 }
 
+.menu__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  line-height: 32px;
+  &-link {
+    color: rgba(0, 0, 0, 0.65);
+  }
+}
+
+.todo-list {
+  max-width: 300px;
+  width: 100%;
+  &__new-list {
+    margin-top: 10px !important;
+  }
+}
+
+.tasks__item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  align-items: center;
+  &-status {
+    display: flex !important;
+    align-items: center;
+  }
+  &-edit {
+    width: 446px !important;
+  }
+}
+
+.hide-checkbox .ant-checkbox {
+  display: none !important;
+}
+
+.ant-checkbox {
+  height: 16px !important;
+}

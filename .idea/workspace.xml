@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86a5a32e-ce3a-414b-a036-b26f1d0e7fe5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/todo/Todo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/todo/Todo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json-server.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/appRouter/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/todo/Tasks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/todo/menu/TodoAside.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/urlHelpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/listsServices.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/tasksServices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/todo/Todo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/todo/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/todo/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,12 +26,24 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="tsconfig.json" />
         <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1SMw82GZZkcHJ4rXQ19yPHs8Fle" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -27,7 +52,9 @@
   <component name="PropertiesComponent">
     <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HW_4" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Templates" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RunDashboard">
@@ -54,12 +81,17 @@
       <updated>1571386609264</updated>
       <workItem from="1571386610578" duration="3288000" />
       <workItem from="1571390448851" duration="43000" />
-      <workItem from="1571390509051" duration="10089000" />
+      <workItem from="1571390509051" duration="21486000" />
+      <workItem from="1571495702485" duration="5786000" />
+      <workItem from="1571502575361" duration="57141000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.env" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
