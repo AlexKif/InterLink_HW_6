@@ -3,46 +3,49 @@ import {Link} from "react-router-dom";
 import {Button, Input} from "antd";
 import {listsServices} from "../../../services/listsServices";
 import Tasks from "../Tasks";
-
 import {Route, Switch} from "react-router-dom";
-
 
 class TodoAside extends Component {
 
     state = {
-        listsData: [],
+        lists: [],
         listName: '',
+        listNumber: null
     };
+
+    componentDidMount() {
+        listsServices.getAllLists().then(res => {
+            this.setState({lists: res});
+        })
+    }
 
     onKeyPress = event => {
         if (event.key === 'Enter') {
             listsServices.createListItem(event.target.value).then(res => {
-                const tempList = this.state.listsData;
+                const tempList = this.state.lists;
                 tempList.push(res);
-                this.setState({listsData: tempList});
+                this.setState({lists: tempList});
             });
             this.setState({listName: ''})
         }
     };
+
+    onClickList(id) {
+        this.setState({listNumber: id});
+    }
 
     handleChange = (event) => {
         this.setState({listName: event.target.value})
     };
 
     deleteListName = (id) => {
-        listsServices.deleteListItem(id).then(res => {
+        listsServices.deleteListItem(id).then(() => {
             listsServices.getAllLists().then(res => {
-                this.setState({listsData: res});
+                this.setState({lists: res});
             })
         })
 
     };
-
-    componentDidMount() {
-        listsServices.getAllLists().then(res => {
-            this.setState({listsData: res});
-        })
-    }
 
     render() {
         return (
@@ -50,9 +53,9 @@ class TodoAside extends Component {
                 <aside className='todo-list'>
                     <h1 className='todo-list__headline'>Todo List</h1>
                     <nav className='todo-list__menu'>
-                        {this.state.listsData.map((item) => (
-                            <div key={item.id} className='menu__item'>
-                                <Link to={`/tasks/${item.id}`} className='menu__item-link'>{item.listName}</Link>
+                        {this.state.lists.map((item, index) => (
+                            <div key={index} className='menu__item' onClick={this.onClickList.bind(this, item.id)}>
+                                <Link to={`/list/${item.id}`} className='menu__item-link'>{item.listName}</Link>
                                 <Button type="danger" icon="delete" onClick={this.deleteListName.bind(this, item.id)}/>
                             </div>
                         ))}
@@ -63,6 +66,14 @@ class TodoAside extends Component {
                            value={this.state.listName}
                            onChange={this.handleChange.bind(this)}/>
                 </aside>
+                <Switch>
+                    <Route path="/" exact>
+                        <h2 className='new-list-headline'>Add new list or select the one you want</h2>
+                    </Route>
+                    <Route path="/list/:id"
+                           exact
+                           render={(props) => <Tasks {...props} listNumber={props.match.params.id} />} />
+                </Switch>
             </>
         );
     }

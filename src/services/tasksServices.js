@@ -3,7 +3,8 @@ import axios from 'axios';
 export const tasksServices = {
     getAllTasks,
     createTask,
-    deleteTask
+    deleteTask,
+    updateTasks
 };
 
 function getAllTasks() {
@@ -11,12 +12,17 @@ function getAllTasks() {
         .then(resp => resp.data)
 }
 
-function createTask(task, status) {
-    return axios.post(' http://localhost:3005/tasks', {task: task, doneTask: status})
+function createTask(task, status, listId) {
+    return axios.post(' http://localhost:3005/tasks', {task: task, doneTask: status, listId: listId})
         .then(resp => resp.data)
 }
 
 function deleteTask(id) {
     return axios.delete(`http://localhost:3005/tasks/${id}`)
+        .then(resp => resp.data)
+}
+
+function updateTasks(task, property) {
+    return axios.put(`http://localhost:3005/tasks/${task.id}`, {...task, ...property})
         .then(resp => resp.data)
 }

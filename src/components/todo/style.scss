@@ -59,6 +59,16 @@
   display: none !important;
 }
 
+.new-list-headline {
+  margin-left: 15px;
+  width: 100%;
+  text-align: left;
+}
+
 .ant-checkbox {
   height: 16px !important;
+}
+
+.tasks__item-checkbox_done {
+  text-decoration: line-through;
 }

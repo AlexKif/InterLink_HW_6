@@ -2,20 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86a5a32e-ce3a-414b-a036-b26f1d0e7fe5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/json-server.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appRouter/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/todo/Tasks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/todo/menu/TodoAside.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/urlHelpers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/listsServices.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/tasksServices.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/todo/Todo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/appRouter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/appRouter/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/todo/Tasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/todo/Tasks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/todo/menu/TodoAside.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/todo/menu/TodoAside.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/todo/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/todo/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/urlHelpers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/tasksServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/tasksServices.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +47,7 @@
   <component name="PropertiesComponent">
     <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HW_4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Templates" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
@@ -83,7 +78,10 @@
       <workItem from="1571390448851" duration="43000" />
       <workItem from="1571390509051" duration="21486000" />
       <workItem from="1571495702485" duration="5786000" />
-      <workItem from="1571502575361" duration="57141000" />
+      <workItem from="1571502575361" duration="59102000" />
+      <workItem from="1571728377344" duration="28745000" />
+      <workItem from="1571815352560" duration="20073000" />
+      <workItem from="1571860683251" duration="6154000" />
     </task>
     <servers />
   </component>
@@ -105,5 +103,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts</url>
+          <line>578</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
