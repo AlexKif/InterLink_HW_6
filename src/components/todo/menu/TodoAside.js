@@ -15,7 +15,10 @@ class TodoAside extends Component {
     componentDidMount() {
         listsServices.getAllLists().then(res => {
             this.setState({lists: res});
-        })
+            res.find((item) => {
+                if (item.id !== this.props.match.params.id) this.props.history.push(`/lists/`)
+            })
+        });
     }
 
     onKeyPress = event => {
@@ -73,10 +76,12 @@ class TodoAside extends Component {
                         <h2 className='new-list-headline'>Add new list or select the one you want</h2>
                     </Route>
                     <Route path="/lists/:id"
+                           exact
                            render={(props) => <Tasks {...props} listNumber={props.match.params.id} />} />
                 </Switch>
             </>
         );
     }
 }
+
 export default withRouter(TodoAside);

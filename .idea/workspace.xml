@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="86a5a32e-ce3a-414b-a036-b26f1d0e7fe5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/todo/Tasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/todo/Tasks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/todo/menu/TodoAside.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/todo/menu/TodoAside.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,6 +78,7 @@
       <workItem from="1571815352560" duration="20073000" />
       <workItem from="1571860683251" duration="6930000" />
       <workItem from="1571903199905" duration="7015000" />
+      <workItem from="1571911788144" duration="6862000" />
     </task>
     <servers />
   </component>

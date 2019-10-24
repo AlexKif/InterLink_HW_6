@@ -65,7 +65,6 @@ class Tasks extends Component {
     };
 
     render() {
-
         const tempTasks = this.state.tasks.filter((task) => {
             return task.listId === this.props.listNumber
         });
