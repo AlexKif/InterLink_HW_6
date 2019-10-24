@@ -9,16 +9,13 @@ class TodoAside extends Component {
 
     state = {
         lists: [],
-        listName: '',
+        listName: ''
     };
 
     componentDidMount() {
-        listsServices.getAllLists().then(res => {
-            this.setState({lists: res});
-            res.find((item) => {
-                if (item.id !== this.props.match.params.id) this.props.history.push(`/lists/`)
-            })
-        });
+        listsServices.getAllLists()
+            .then(res => { this.setState({lists: res})})
+            .then(() => {this.setState({taskRoute: this.taskRoute()})})
     }
 
     onKeyPress = event => {
@@ -47,8 +44,13 @@ class TodoAside extends Component {
                 lists.splice(currentList, 1);
                 return {lists: lists}
             });
+
             this.props.history.push(`/lists/`)
         });
+    };
+
+    taskRoute = () => {
+        return <Route path="/lists/:id" render={(props) => <Tasks {...props} listNumber={props.match.params.id} listsUrl={this.state.lists}/>} />
     };
 
     render() {
@@ -75,9 +77,7 @@ class TodoAside extends Component {
                     <Route path="/lists" exact>
                         <h2 className='new-list-headline'>Add new list or select the one you want</h2>
                     </Route>
-                    <Route path="/lists/:id"
-                           exact
-                           render={(props) => <Tasks {...props} listNumber={props.match.params.id} />} />
+                    {this.state.taskRoute}
                 </Switch>
             </>
         );

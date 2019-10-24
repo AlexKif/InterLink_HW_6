@@ -3,6 +3,7 @@ import {Checkbox, Input} from 'antd';
 import { Button } from 'antd';
 import './style.scss'
 import {tasksServices} from "../../services/tasksServices";
+import {Redirect} from "react-router-dom";
 
 class Tasks extends Component {
     state = {
@@ -68,6 +69,13 @@ class Tasks extends Component {
         const tempTasks = this.state.tasks.filter((task) => {
             return task.listId === this.props.listNumber
         });
+
+        // console.log('AAAAAA',this.props.listsUrl);
+        const test = this.props.listsUrl.find((list) => {
+            return list.id == this.props.listNumber
+        });
+        console.log('WWWWWWWWWWWWW', test);
+        if(!test) return <Redirect to="/lists"/>;
 
         return (
             <div className="tasks">
