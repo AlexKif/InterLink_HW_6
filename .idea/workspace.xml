@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="86a5a32e-ce3a-414b-a036-b26f1d0e7fe5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/todo/menu/TodoAside.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/todo/menu/TodoAside.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +39,7 @@
   <component name="PropertiesComponent">
     <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../littleredwagon" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Templates" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
@@ -76,7 +74,7 @@
       <workItem from="1571728377344" duration="28745000" />
       <workItem from="1571815352560" duration="20073000" />
       <workItem from="1571860683251" duration="6930000" />
-      <workItem from="1571903199905" duration="5190000" />
+      <workItem from="1571903199905" duration="7015000" />
     </task>
     <servers />
   </component>
