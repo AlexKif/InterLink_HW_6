@@ -1,4 +1,26 @@
 {
-  "tasks": [],
-  "lists": []
+  "tasks": [
+    {
+      "task": "wwe",
+      "isDone": false,
+      "listId": "1",
+      "id": 1
+    },
+    {
+      "task": "qwewqe",
+      "isDone": false,
+      "listId": "1",
+      "id": 2
+    }
+  ],
+  "lists": [
+    {
+      "listName": "123",
+      "id": 1
+    },
+    {
+      "listName": "123",
+      "id": 2
+    }
+  ]
 }

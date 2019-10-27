@@ -21,7 +21,6 @@ class Tasks extends Component {
 
     componentDidMount() {
         this.getTasks();
-        this.setState({loading: true})
     }
 
     componentDidUpdate = (prevProps) => {
