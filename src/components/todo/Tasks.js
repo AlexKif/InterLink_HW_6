@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Checkbox, Input} from 'antd';
+import {Checkbox, Input, Spin} from 'antd';
 import { Button } from 'antd';
 import './style.scss'
 import {tasksServices} from "../../services/tasksServices";
@@ -15,29 +15,21 @@ class Tasks extends Component {
     getTasks = () => {
         const currentUrl = this.props.location.pathname;
         const currentUrlId = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
-        tasksServices.getAllTasks(currentUrlId).then((res) => {
-            this.setState({tasks: res});
-        });
+        tasksServices.getAllTasks(currentUrlId)
+            .then((res) => { this.setState({loading: false, tasks: res})})
     };
 
     componentDidMount() {
         this.getTasks();
+        this.setState({loading: true})
     }
 
     componentDidUpdate = (prevProps) => {
         if (this.props.listNumber !== prevProps.listNumber) {
             this.getTasks();
+            this.setState({loading: true})
         }
     };
-
-    static getDerivedStateFromProps (props, state) {
-        const currentUrl = props.location.pathname;
-        const currentUrlId = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
-        tasksServices.getAllTasks(currentUrlId).then((res) => {
-            return {tasks: res}
-        });
-        return null
-    }
 
     handleChange = (event) =>  {
         this.setState({taskName: event.target.value})
@@ -100,24 +92,26 @@ class Tasks extends Component {
                         onClick={this.createTask}>
                     Add task
                 </Button>
-                {this.state.tasks.map((task, index) => (
-                    <div className='tasks__item' key={index}>
-                        <Checkbox onChange={this.onChangeCheckbox.bind(this, task)}
-                                  className={task.isDone ? 'tasks__item-checkbox_done': 'tasks__item-checkbox'}
-                                  checked={task.isDone}>
-                            {task.task}
-                        </Checkbox>
-                        <div className="actions">
-                            <Button type="primary"
-                                    icon="edit"
-                                    className="actions-edit"
-                                    onClick={this.editTask.bind(this, task)}/>
-                            <Button type="danger"
-                                    icon="delete"
-                                    onClick={this.deleteTask.bind(this, task)}/>
+                <Spin spinning={this.state.loading}>
+                    {this.state.tasks.map((task, index) => (
+                        <div className='tasks__item' key={index}>
+                            <Checkbox onChange={this.onChangeCheckbox.bind(this, task)}
+                                      className={task.isDone ? 'tasks__item-checkbox_done' : 'tasks__item-checkbox'}
+                                      checked={task.isDone}>
+                                {task.task}
+                            </Checkbox>
+                            <div className="actions">
+                                <Button type="primary"
+                                        icon="edit"
+                                        className="actions-edit"
+                                        onClick={this.editTask.bind(this, task)}/>
+                                <Button type="danger"
+                                        icon="delete"
+                                        onClick={this.deleteTask.bind(this, task)}/>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </Spin>
             </div>
         );
     }

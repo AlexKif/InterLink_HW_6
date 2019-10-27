@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link, Redirect, withRouter} from "react-router-dom";
-import {Button, Input} from "antd";
+import {Button, Input, Spin} from "antd";
 import {listsServices} from "../../../services/listsServices";
 import Tasks from "../Tasks";
 import {Route, Switch} from "react-router-dom";
@@ -36,7 +36,7 @@ class TodoAside extends Component {
     };
 
     onClickList = (id) => {
-        this.setState({listNumber: id});
+        this.setState({listNumber: id, loading: true});
     };
 
     handleChange = (event) => {
@@ -80,7 +80,7 @@ class TodoAside extends Component {
                         <h2 className='new-list-headline'>Add new list or select the one you want</h2>
                     </Route>
                     <Route path="/lists/:id">
-                        <Tasks listNumber={this.state.listNumber} />
+                        <Tasks listNumber={this.state.listNumber} loading={this.state.loading}/>
                     </Route>
                 </Switch>
             </>

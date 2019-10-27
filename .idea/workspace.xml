@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86a5a32e-ce3a-414b-a036-b26f1d0e7fe5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appRouter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/appRouter/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/todo/Tasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/todo/Tasks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/todo/menu/TodoAside.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/todo/menu/TodoAside.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/listsServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/listsServices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/tasksServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/tasksServices.js" afterDir="false" />
-    </list>
+    <list default="true" id="86a5a32e-ce3a-414b-a036-b26f1d0e7fe5" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +80,7 @@
       <workItem from="1572175397209" duration="1776000" />
       <workItem from="1572177194996" duration="14956000" />
       <workItem from="1572197636687" duration="2816000" />
-      <workItem from="1572200570054" duration="7046000" />
+      <workItem from="1572200570054" duration="7287000" />
     </task>
     <servers />
   </component>
