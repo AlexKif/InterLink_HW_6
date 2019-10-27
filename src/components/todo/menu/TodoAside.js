@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link, Redirect, withRouter} from "react-router-dom";
-import {Button, Input, Spin} from "antd";
+import {Button, Input} from "antd";
 import {listsServices} from "../../../services/listsServices";
 import Tasks from "../Tasks";
 import {Route, Switch} from "react-router-dom";
