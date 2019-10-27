@@ -36,7 +36,7 @@ class TodoAside extends Component {
     };
 
     onClickList = (id) => {
-        this.setState({listNumber: id, loading: true});
+        this.setState({listNumber: id});
     };
 
     handleChange = (event) => {
@@ -80,7 +80,7 @@ class TodoAside extends Component {
                         <h2 className='new-list-headline'>Add new list or select the one you want</h2>
                     </Route>
                     <Route path="/lists/:id">
-                        <Tasks listNumber={this.state.listNumber} loading={this.state.loading}/>
+                        <Tasks listNumber={this.state.listNumber}/>
                     </Route>
                 </Switch>
             </>
