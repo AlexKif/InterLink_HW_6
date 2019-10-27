@@ -7,16 +7,16 @@ export const listsServices = {
 };
 
 function getAllLists() {
-    return axios.get(' http://localhost:3005/lists')
+    return axios.get(`${process.env.REACT_APP_BASE_URL}lists`)
         .then(resp => resp.data)
 }
 
 function createListItem(data) {
-    return axios.post(' http://localhost:3005/lists', {listName: data})
+    return axios.post(`${process.env.REACT_APP_BASE_URL}lists`, {listName: data})
         .then(resp => resp.data)
 }
 
 function deleteListItem(id) {
-    return axios.delete(`http://localhost:3005/lists/${id}`)
+    return axios.delete(`${process.env.REACT_APP_BASE_URL}lists/${id}`)
         .then(resp => resp.data)
 }

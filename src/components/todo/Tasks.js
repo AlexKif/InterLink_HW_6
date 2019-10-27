@@ -3,21 +3,43 @@ import {Checkbox, Input} from 'antd';
 import { Button } from 'antd';
 import './style.scss'
 import {tasksServices} from "../../services/tasksServices";
-import {Redirect} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 
 class Tasks extends Component {
+
     state = {
         taskName: '',
         tasks: [],
     };
 
-    componentDidMount() {
-        tasksServices.getAllTasks().then((res) => {
+    getTasks = () => {
+        const currentUrl = this.props.location.pathname;
+        const currentUrlId = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
+        tasksServices.getAllTasks(currentUrlId).then((res) => {
             this.setState({tasks: res});
         });
+    };
+
+    componentDidMount() {
+        this.getTasks();
     }
 
-    handleChange(event)  {
+    componentDidUpdate = (prevProps) => {
+        if (this.props.listNumber !== prevProps.listNumber) {
+            this.getTasks();
+        }
+    };
+
+    static getDerivedStateFromProps (props, state) {
+        const currentUrl = props.location.pathname;
+        const currentUrlId = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
+        tasksServices.getAllTasks(currentUrlId).then((res) => {
+            return {tasks: res}
+        });
+        return null
+    }
+
+    handleChange = (event) =>  {
         this.setState({taskName: event.target.value})
     };
 
@@ -36,7 +58,7 @@ class Tasks extends Component {
         });
     };
 
-    deleteTask(task) {
+    deleteTask = (task) => {
         tasksServices.deleteTask(task.id).then((res) => {
             this.setState(({tasks}) => {
                 const index = tasks.indexOf(task);
@@ -44,9 +66,9 @@ class Tasks extends Component {
                 return {tasks: tasks}
             });
         });
-    }
+    };
 
-    editTask(task) {
+    editTask = (task) => {
         const changedTask = prompt('Edit task', task.task);
         tasksServices.updateTasks(task, {task: changedTask}).then((res) => {
             const tempTasks = this.state.tasks;
@@ -54,10 +76,10 @@ class Tasks extends Component {
             tempTasks[indexTask] = res;
             this.setState({tasks: tempTasks});
         })
-    }
+    };
 
-    onChangeCheckbox = (task, status, event) => {
-        tasksServices.updateTasks(task, {doneTask: event.target.checked}).then((res) => {
+    onChangeCheckbox = (task, event) => {
+        tasksServices.updateTasks(task, {isDone: event.target.checked}).then((res) => {
             const tempTasks = this.state.tasks;
             const indexTask = tempTasks.indexOf(task);
             tempTasks[indexTask] = res;
@@ -66,34 +88,23 @@ class Tasks extends Component {
     };
 
     render() {
-        const tempTasks = this.state.tasks.filter((task) => {
-            return task.listId === this.props.listNumber
-        });
-
-        // console.log('AAAAAA',this.props.listsUrl);
-        const test = this.props.listsUrl.find((list) => {
-            return list.id == this.props.listNumber
-        });
-        console.log('WWWWWWWWWWWWW', test);
-        if(!test) return <Redirect to="/lists"/>;
-
         return (
             <div className="tasks">
                 <Input placeholder="Enter task"
                        className="tasks__enter"
                        value={this.state.taskName}
-                       onKeyPress={this.onKeyPress.bind(this)}
-                       onChange={this.handleChange.bind(this)}/>
+                       onKeyPress={this.onKeyPress}
+                       onChange={this.handleChange}/>
                 <Button type="primary"
                         className="tasks__send"
-                        onClick={this.createTask.bind(this)}>
+                        onClick={this.createTask}>
                     Add task
                 </Button>
-                {tempTasks.map((task, index) => (
+                {this.state.tasks.map((task, index) => (
                     <div className='tasks__item' key={index}>
-                        <Checkbox onChange={this.onChangeCheckbox.bind(this, task, task.doneTask)}
-                                  className={task.doneTask ? 'tasks__item-checkbox_done': 'tasks__item-checkbox'}
-                                  checked={task.doneTask}>
+                        <Checkbox onChange={this.onChangeCheckbox.bind(this, task)}
+                                  className={task.isDone ? 'tasks__item-checkbox_done': 'tasks__item-checkbox'}
+                                  checked={task.isDone}>
                             {task.task}
                         </Checkbox>
                         <div className="actions">
@@ -112,4 +123,4 @@ class Tasks extends Component {
     }
 }
 
-export default Tasks;
+export default withRouter(Tasks);

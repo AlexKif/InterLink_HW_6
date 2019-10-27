@@ -9,14 +9,20 @@ class TodoAside extends Component {
 
     state = {
         lists: [],
-        listName: ''
+        listName: '',
     };
 
-    componentDidMount() {
+    componentDidMount = () => {
+        const currentUrl = this.props.location.pathname;
+        const currentUrlId = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
         listsServices.getAllLists()
-            .then(res => { this.setState({lists: res})})
-            .then(() => {this.setState({taskRoute: this.taskRoute()})})
-    }
+            .then(res => {
+                this.setState({lists: res})
+            })
+            .then(() => {
+                 if (!this.state.lists.find((item) => item.id === +currentUrlId)) this.props.history.push(`/lists/`)
+            });
+    };
 
     onKeyPress = event => {
         if (event.key === 'Enter') {
@@ -29,9 +35,9 @@ class TodoAside extends Component {
         }
     };
 
-    onClickList(id) {
+    onClickList = (id) => {
         this.setState({listNumber: id});
-    }
+    };
 
     handleChange = (event) => {
         this.setState({listName: event.target.value})
@@ -47,10 +53,6 @@ class TodoAside extends Component {
 
             this.props.history.push(`/lists/`)
         });
-    };
-
-    taskRoute = () => {
-        return <Route path="/lists/:id" render={(props) => <Tasks {...props} listNumber={props.match.params.id} listsUrl={this.state.lists}/>} />
     };
 
     render() {
@@ -69,15 +71,17 @@ class TodoAside extends Component {
                     </nav>
                     <Input placeholder="New list"
                            className='todo-list__new-list'
-                           onKeyPress={this.onKeyPress.bind(this)}
+                           onKeyPress={this.onKeyPress}
                            value={this.state.listName}
-                           onChange={this.handleChange.bind(this)}/>
+                           onChange={this.handleChange}/>
                 </aside>
                 <Switch>
                     <Route path="/lists" exact>
                         <h2 className='new-list-headline'>Add new list or select the one you want</h2>
                     </Route>
-                    {this.state.taskRoute}
+                    <Route path="/lists/:id">
+                        <Tasks listNumber={this.state.listNumber} />
+                    </Route>
                 </Switch>
             </>
         );
